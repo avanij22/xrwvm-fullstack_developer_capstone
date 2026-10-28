@@ -51,6 +51,9 @@ jobs:
       - name: Install JSHint
         run: npm install jshint --global
 
+      - name: Configure JSHint
+        run: echo '{"esversion": 11, "node": true}' > .jshintrc
+
       - name: Run Linter
         run: |
           find ./server/database -name "*.js" -exec jshint {} +
